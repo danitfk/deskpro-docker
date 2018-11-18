@@ -9,7 +9,7 @@ user                           = mysql
 default-storage-engine         = InnoDB
 
 # DATA STORAGE #
-datadir                        = /var/lib/mysql/
+datadir                        = /db/
 
 # MyISAM #
 key-buffer-size                = 128M
