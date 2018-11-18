@@ -7,6 +7,9 @@
 user                           = mysql
 default-storage-engine         = InnoDB
 
+# DATA STORAGE #
+datadir                        = /var/lib/mysql/
+
 # MyISAM #
 key-buffer-size                = 128M
 myisam-recover-options         = FORCE,BACKUP
