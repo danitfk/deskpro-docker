@@ -38,7 +38,6 @@ services:
       MYSQL_PASSWORD: deskpropassword
     volumes:
        - deskpro-db:/var/lib/mysql
-       - ./mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
 volumes:
   deskpro-fpm:
   deskpro-db:
