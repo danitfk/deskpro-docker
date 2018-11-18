@@ -4,6 +4,7 @@
 [mysqld]
 
 # GENERAL #
+bind-address		       = 0.0.0.0
 user                           = mysql
 default-storage-engine         = InnoDB
 
@@ -17,7 +18,6 @@ myisam-recover-options         = FORCE,BACKUP
 # SAFETY #
 max-allowed-packet             = 16M
 max-connect-errors             = 1000000
-skip-name-resolve
 
 # BINARY LOGGING #
 log-bin                        = /var/lib/mysql/mysql-bin
