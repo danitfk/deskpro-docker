@@ -8,8 +8,6 @@ bind-address		       = 0.0.0.0
 user                           = mysql
 default-storage-engine         = InnoDB
 
-# DATA STORAGE #
-datadir                        = /db/
 
 # MyISAM #
 key-buffer-size                = 128M
