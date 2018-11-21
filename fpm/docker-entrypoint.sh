@@ -11,7 +11,7 @@ if [ "$1" = 'deskpro-docker-cron' -a "$(id -u)" = '0' ]; then
 	exec gosu www-data "$0" "$@"
 fi
 
-if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
+if [ "$1" == php-fpm ]; then
 	if [ ! -e /var/www/html/config/config.database.php ]; then
 		MYSQL_HOST=${MYSQL_HOST:-mysql}
 		MYSQL_USER=${MYSQL_USER}
@@ -63,7 +63,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 		sed -i "s/MYSQL_PASSWORD/${MYSQL_PASSWORD}/" "$profile"
 
-		unzip -f -d /var/www/html /usr/src/deskpro.zip
+		unzip -d /var/www/html /usr/src/deskpro.zip
 		chown -R www-data:www-data /var/www/html/
 
 		cd /var/www/html/ && bin/install --profile "$profile" --no-interaction
