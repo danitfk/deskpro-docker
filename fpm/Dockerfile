@@ -50,7 +50,6 @@ RUN set -x \
 	&& rm -rf /var/lib/apt/lists/*
 
 
-RUN curl -L https://www.deskpro.com/downloads/deskpro.zip -o /usr/src/deskpro.zip
 
 ENV GOSU_VERSION 1.10
 RUN set -ex; \
@@ -92,10 +91,6 @@ RUN set -ex; \
 	apt-get purge -y --auto-remove $fetchDeps
 
 VOLUME /var/www/html
-
-RUN rm -rf /etc/apache2/sites-enabled/000-default.conf
-
-COPY deskpro.conf /etc/apache2/sites-enabled/deskpro.conf
 
 COPY php.ini /usr/local/etc/php/
 
